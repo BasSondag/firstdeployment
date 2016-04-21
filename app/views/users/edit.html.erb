@@ -1,0 +1,16 @@
+<h1>Update Profile</h1>
+
+
+<form action="/users/<%= @user.id%>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	Email: <br>
+	<input id="email" type="email" name="user[email]" value="<%= @user.email%>"><br>
+	Name: <br>
+	<input id="name" type="text" name="user[name]"value="<%= @user.name%>" ><br>
+	Password:<br>
+	<input id="password" type="password" name="user[password]"><br>
+	Pw-Confirmation:<br>
+	<input id="password_confirmation" type="password" name="user[password_confirmation]"><br>
+	<input type="submit" value="Update">
+</form>
