@@ -1,10 +1,29 @@
-<h1>Log In:</h1>
-<%= flash[:errors] %>
-<form action="/sessions" method="post">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<p><label for="email">Email</label><br>
-	<input type="email" class="form-control" name="email"></p>
-	<p><label for="password">Password</label><br>
-	<input type="password" name="password"></p> 
-	<input type="submit" value="Log In">
-</form>
+<div class="container">
+	<h1>Login:</h1>
+
+	<% if flash[:errors] %>
+		<h3><ul>
+	  <% flash[:errors].each do |error| %>
+	    	<li><%= error %></li>
+	  <% end %>
+		</ul></h3>
+	<% end %>
+
+	<form class="form-inline" action="/sessions" method="post">
+
+		<div class="form-group">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<p><label for="email">Email:</label><br>
+			<input type="email" class="form-control" name="email"></p>
+			<p><label for="password">Password:</label><br>
+			<input type="password" class="form-control" name="password"></p> 
+		</div><br>
+		<button type="submit" class="btn btn-success btn-lg">
+    		<i class="fa fa-sign-in fa-lg"></i>Login
+		</button>
+		
+	</form>
+	<br>
+	<h3>if you don't have a acount! Sign up first</h3>
+ 	<a href="/users/new" class="btn btn-primary btn-lg" role="button" ><span class="fa fa-user fa-lg"></span> Sign up</a>
+</div>

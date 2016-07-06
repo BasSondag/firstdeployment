@@ -1,15 +1,30 @@
-<h1>Welcome Register </h1>
+<div class="container">
+	<h1>Welcome Register </h1>
+	<% if flash[:errors] %>
+			<h3><ul>
+		  <% flash[:errors].each do |error| %>
+		    	<li><%= error %></li>
+		  <% end %>
+			</ul></h3>
+		<% end %>
+	<form class="form-inline"  action="/users" method="post">
+		<div class="form-group">
+			<input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
 
-<form action="/users" method="post">
-	<input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
-
-	Email: <br>
-	<input id="email" type="email" name="user[email]"><br>
-	Name: <br>
-	<input id="name" type="text" name="user[name]"><br>
-	Password:<br>
-	<input id="password"type="password" name="user[password]"><br>
-	Pw-Confirmation:<br>
-	<input id="password_confirmation" type="password" name="user[password_confirmation]"><br>
-	<input type="submit" value="Join">
-</form>
+			Email: <br>
+			<input id="email" class="form-control" type="email" name="user[email]"><br>
+			Name: <br>
+			<input class="form-control" id="name" type="text" name="user[name]"><br>
+			Password:<br>
+			<input class="form-control" id="password"type="password" name="user[password]"><br>
+			Pw-Confirmation:<br>
+			<input class="form-control" id="password_confirmation" type="password" name="user[password_confirmation]"><br>
+		</div>
+		<br>
+		<br>
+		<input type="submit" class="btn btn-success btn-lg" value="Join">
+	</form>
+	<br>
+		<h3>if you already have a acount! go to Login</h3>
+	 	<a href="/sessions/new" class="btn btn-primary btn-lg" role="button" >Login</a>
+</div>

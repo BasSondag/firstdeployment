@@ -12,7 +12,7 @@ class SecretsController < ApplicationController
 
 	def destroy
 		secret = Secret.find(params[:id])
-		secret.desttroy if secret.user == current_user
+		secret.destroy if secret.user == current_user
 		redirect_to :back
 	end
 

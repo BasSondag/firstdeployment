@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  root 'sessions#new'
+
   get 'likes/create'
 
   resources :sessions

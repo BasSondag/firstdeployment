@@ -5,8 +5,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 # Use postgresql as the database for Active Record
 gem 'pg'
+# Bootstrap 3
+gem 'bootstrap-sass', '~> 3.3.6'
+# font awe-some- less fa - fa icons 
+gem 'font-awesome-sass'
+
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -30,6 +35,8 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'hirb'
+
+
 
 group :test, :development do
 	gem 'rspec-rails'
