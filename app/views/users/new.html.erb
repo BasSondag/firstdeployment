@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Welcome Register </h1>
+	<h1>Welcome</h1>
 	<% if flash[:errors] %>
 			<h3><ul>
 		  <% flash[:errors].each do |error| %>
@@ -17,14 +17,16 @@
 			<input class="form-control" id="name" type="text" name="user[name]"><br>
 			Password:<br>
 			<input class="form-control" id="password"type="password" name="user[password]"><br>
-			Pw-Confirmation:<br>
+			Confirm Password:<br>
 			<input class="form-control" id="password_confirmation" type="password" name="user[password_confirmation]"><br>
 		</div>
 		<br>
 		<br>
-		<input type="submit" class="btn btn-success btn-lg" value="Join">
+		<button type="submit" class="btn btn-success btn-lg">
+    		<i class="fa fa-user fa-lg"></i> Sign Up
+		</button>
 	</form>
 	<br>
-		<h3>if you already have a acount! go to Login</h3>
-	 	<a href="/sessions/new" class="btn btn-primary btn-lg" role="button" >Login</a>
+		<h3>If you already have an account log in here</h3>
+	 	<a href="/sessions/new" class="btn btn-primary btn-lg" role="button" ><span class="fa fa-sign-in fa-lg"></span> Log In</a>
 </div>
